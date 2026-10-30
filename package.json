@@ -1,0 +1,30 @@
+{
+  "name": "omnigraph-mcp-server",
+  "version": "1.0.0",
+  "description": "Google Workspace MCP Server for Drive, Docs, and Gmail",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "server:http": "tsc && node dist/server.js",
+    "auth": "tsc && node dist/auth.js",
+    "agent": "tsc && node dist/agent.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.32.0",
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "cors": "^2.8.6",
+    "dotenv": "^16.4.7",
+    "express": "^5.3.0",
+    "google-auth-library": "^9.15.1",
+    "googleapis": "^144.0.0",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.13.0",
+    "typescript": "^5.7.3"
+  }
+}

@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  omnigraph-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: omnigraph-enterprise-mcp
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    volumes:
+      # Persistent storage for encrypted token vault and audit logs
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    security_opt:
+      - no-new-privileges:true

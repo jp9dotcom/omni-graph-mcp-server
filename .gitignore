@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.env
+token.json
+# Secrets – must never be committed
+client_secret_*.json
+.env
+

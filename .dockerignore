@@ -1,0 +1,8 @@
+node_modules
+dist
+.env
+token.json
+data
+.git
+.gitignore
+*.log
